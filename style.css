@@ -42,3 +42,11 @@ body{
     margin-left: var(--mb-3);
     margin-right: var(--mb-3);
 }
+.show__content{
+    border: #403A3A 1px solid;
+    border-radius: 10px;
+}
+.show__data{
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
