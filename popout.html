@@ -1,15 +1,62 @@
 <!DOCTYPE html>
-  <head >
-    <meta charset = "utf-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title> Tv Calendar</title>
-    <style>
-    </style>
-  </head>
-  <body>
-    
-     
-    <script src ="popout.js"> </script> 
-    </body>
+    <title>TV - Calendar</title>
+</head>
+<body>
+    <header>
+        <h1 id="current__date"></h1>
+    </header>
+    <section class="show section" id="show">
+        <h2 class="section-title">Tending Shows</h2>
+        <div class="show__container bd-grid">
+            <div class="show__content list_dot">
+                <div class="show__time">
+                    <span class="show__line"></span>
+                </div>
+                <div class="show__data bd-grid">
+                    <h3 class="show__title">ex: GOT</h3>
+                    <span class="show__seasons">season 5</span>
+                    <span class="show__episode">Episode 3</span>
+                    <span class="show__streamer">HBO</span>
+                    <span class="show__aired">07/03/2022</span>
+                </div>
+            </div>
+        </div>
+        <div class="show__container bd-grid">
+            <div class="show__content list_dot">
+                <div class="show__time">
+                    <span class="show__line"></span>
+                </div>
+                <div class="show__data bd-grid">
+                    <h3 class="show__title">ex: TWD</h3>
+                    <span class="show__seasons">season 4</span>
+                    <span class="show__episode">Episode 9</span>
+                    <span class="show__streamer">AMC</span>
+                    <span class="show__aired">07/03/2022</span>
+                </div>
+            </div>
+        </div>
+        <div class="show__container bd-grid">
+            <div class="show__content list_dot">
+                <div class="show__time">
+                    <span class="show__line"></span>
+                </div>
+                <div class="show__data bd-grid">
+                    <h3 class="show__title">ex: Atlanta</h3>
+                    <span class="show__seasons">season 2</span>
+                    <span class="show__episode">Episode 1</span>
+                    <span class="show__streamer">FX</span>
+                    <span class="show__aired">07/03/2022</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.js"></script>
+    <script src ="popout.js"> </script>
+</body>
 </html>
-

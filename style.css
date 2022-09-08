@@ -1,0 +1,44 @@
+/*====== FONT IMPORT ======*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+ /*====== Variable CSS ======*/
+:root {
+ /*====== Colors ======*/
+--title-color: #0B0A0A;
+--text-color: #403A3A;
+--text-color-light: #707070;
+--containers-color: #FAFAFA;
+--conterners-color-alt: #F0EFEF;
+--body-color: #FCFCFC;
+ /*====== Font and Typography ======*/
+--body-font:'Poppins', sans-serif;
+--h1-font-size: 1.5rem;
+--h2-font-size: 1.25rem;
+--h3-font-size: 1rem;
+--normal-font-size: .938rem;
+--small-font-size: .875rem;
+--smaller-font-size: .813rem;
+ /*====== Font weight ======*/
+--font-medium: 500;
+--font-semi-bold: 900;
+/*====== Margins ======*/
+--mb-1:.5rem;
+--mb-2:1rem;
+--mb-3:1.5rem;
+}
+body{
+    height: 500px;
+    width: 300px;
+    display: grid;
+    gap: 1rem;
+}
+.bd-grid{
+    display: grid;
+    gap: 1rem;
+    margin-top: 10px;
+}
+.bd-container{
+    max-width: 968px;
+    width: calc(100% - 3rem);
+    margin-left: var(--mb-3);
+    margin-right: var(--mb-3);
+}
