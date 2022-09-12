@@ -30,11 +30,15 @@ body{
     width: 300px;
     display: grid;
     gap: 1rem;
+    font-family: 'Fontdiner Swanky', cursive;
+}
+.head{
+    text-align: center;
 }
 .bd-grid{
     display: grid;
-    gap: 1rem;
-    margin-top: 10px;
+    gap: .5rem;
+    margin-top: -2px;
 }
 .bd-container{
     max-width: 968px;
@@ -45,8 +49,22 @@ body{
 .show__content{
     border: #403A3A 1px solid;
     border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-color);
 }
-.show__data{
+.show__container{
+    font-size: 14px;
+}
+.show__img{
+    width: 137px;
+    border-radius: 9px;  
+}
+.show__information{
     margin-left: 15px;
-    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+}
+.show__title{
+    text-align: center;
 }
