@@ -40,11 +40,13 @@ function showTvInfo(data){
                 <div class="show__data bd-grid">
                     <h3 class="show__title">${title}</h3>
                         <div class="show__information bd-grid">
-                            <span class="show__seasons">Season : ${season}</span>
-                            <span class="show__episode">Episode : ${episode}</span>
-                            <span class="show__streamer">Episode name : ${episodeName}</span>
-                            <span class="show__network">Channel : ${networkChanel}</span>
                             <img class="show__img" src="${showImage}"> 
+                            <div class="show__text__info">    
+                                <span class="show__seasons">Season : ${season}</span>
+                                <span class="show__episode">Episode : ${episode}</span>
+                                <span class="show__streamer">Episode name : ${episodeName}</span>
+                                <span class="show__network">Channel : ${networkChanel}</span>
+                            </div>  
                         </div>                          
                 </div>
             </a>       

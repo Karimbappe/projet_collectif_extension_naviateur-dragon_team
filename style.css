@@ -30,15 +30,25 @@ body{
     width: 300px;
     display: grid;
     gap: 1rem;
-    font-family: 'Fontdiner Swanky', cursive;
+    font-family: 'Roboto', sans-serif;
+    background-image:url(img/poupe.jpg);
 }
 .head{
     text-align: center;
 }
 .bd-grid{
     display: grid;
-    gap: .5rem;
+    gap: 1rem;
     margin-top: -2px;
+    margin-bottom: 5px;
+    background-color: rgb(250, 248, 245);
+}
+.show__text__info{
+    font-weight: 900;
+    gap: 0.5rem;
+    display: grid;
+    margin-right: 4px;
+
 }
 .bd-container{
     max-width: 968px;
@@ -63,7 +73,6 @@ body{
     margin-left: 15px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 1fr;
 }
 .show__title{
     text-align: center;
