@@ -4,7 +4,7 @@ const tvAPI = "https://api.tvmaze.com/schedule?country=US&date="+today
 
 
 //date in title htlm
-document.getElementById("current__date").innerHTML = today ; 
+//document.getElementById("current__date").innerHTML = today ; 
 
 function fetchTvApi(){
     fetch(tvAPI)
@@ -42,10 +42,10 @@ function showTvInfo(data){
                         <div class="show__information bd-grid">
                             <img class="show__img" src="${showImage}"> 
                             <div class="show__text__info">    
-                                <span class="show__seasons">Season : ${season}</span>
-                                <span class="show__episode">Episode : ${episode}</span>
-                                <span class="show__streamer">Episode name : ${episodeName}</span>
-                                <span class="show__network">Channel : ${networkChanel}</span>
+                                <span class="show__season"><strong>Season :</strong> ${season}</span>
+                                <span class="show__episode"><strong>Episode :</strong> ${episode}</span>
+                                <span class="show__streamer"><strong>Episode name :</strong> ${episodeName}</span>
+                                <span class="show__network"><strong>Channel :</strong> ${networkChanel}</span>
                             </div>  
                         </div>                          
                 </div>

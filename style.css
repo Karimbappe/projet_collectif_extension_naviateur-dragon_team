@@ -26,29 +26,36 @@
 --mb-3:1.5rem;
 }
 body{
-    height: 500px;
+    height: 1000px;
     width: 300px;
     display: grid;
     gap: 1rem;
     font-family: 'Roboto', sans-serif;
-    background-image:url(img/poupe.jpg);
+    background-color: #403A3A;
 }
 .head{
     text-align: center;
+    color: white;
+}
+.date{
+    margin-bottom: -3px;
 }
 .bd-grid{
     display: grid;
     gap: 1rem;
     margin-top: -2px;
     margin-bottom: 5px;
+    border-radius: 10px;
     background-color: rgb(250, 248, 245);
 }
 .show__text__info{
-    font-weight: 900;
-    gap: 0.5rem;
+    font-size: 12px;
     display: grid;
     margin-right: 4px;
-
+    line-height: 19px
+}
+.show_text_style{
+    font-weight: bold;
 }
 .bd-container{
     max-width: 968px;
@@ -76,4 +83,21 @@ body{
 }
 .show__title{
     text-align: center;
+    margin-bottom: -3px; 
+    font-weight: 700;
+
 }
+.neonText {
+    color: #fff;
+    text-shadow:
+      /* White glow */
+        0 0 7px #fff,
+        0 0 10px rgb(130, 4, 4),
+        0 0 21px rgba(204, 10, 10, 0.33),
+      /* Red glow */
+        0 0 42px rgb(255, 38, 0),
+        0 0 82px rgb(255, 13, 0),
+        0 0 92px rgb(255, 30, 0),
+        0 0 102px rgb(255, 85, 0),
+        0 0 151px rgb(255, 21, 0);
+  }
