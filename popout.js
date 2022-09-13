@@ -1,13 +1,59 @@
+// creat date for title display
+const dateElement = document.querySelector(".date");
+
+function formatDate(date) {
+    const DAYS = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ];
+    const MONTHS = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
+
+    return `${DAYS[date.getDay()]}, ${
+        MONTHS[date.getMonth()]
+    } ${date.getDate()} ${date.getFullYear()}`;
+}
+
+setInterval(() => {
+    const now = new Date();
+    dateElement.textContent = formatDate(now);
+});
+
+//parameter time values
+
+const todayApi = new Date().toISOString().slice(0, 10); 
+
+const tomorrow = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+const tomorrowApi = tomorrow.toISOString().slice(0,10);
+
+const yesterday= new Date()
+yesterday.setDate(yesterday.getDate() -1);
+const yesterdayApi = yesterday.toISOString().slice(0,10);
+console.log(yesterdayApi);
+console.log(tomorrowApi)
+
 //search API for
-var today = new Date().toISOString().slice(0, 10); 
-const tvAPI = "https://api.tvmaze.com/schedule?country=US&date="+today     
-
-
-//date in title htlm
-//document.getElementById("current__date").innerHTML = today ; 
-
-function fetchTvApi(){
-    fetch(tvAPI)
+const tvAPI = "https://api.tvmaze.com/schedule?country=US&date=" 
+function fetchTvApi(day){
+    fetch(tvAPI+day)
     .then(response =>response.json())
     .then((data) =>showTvInfo(data)) //console.log(data))//
     // .catch(() =>{
@@ -15,9 +61,12 @@ function fetchTvApi(){
    // })
 };
 
+
 let defaultImg = "img/red-matreshka128.png";
 
 function showTvInfo(data){
+    document.querySelector('.container').innerHTML=" " 
+    var tvInfoString = ""
     for(i=0; i<data.length; i++) {
         let title = data[i].show.name;
         let season = data[i].season;
@@ -32,7 +81,6 @@ function showTvInfo(data){
         if (data[i].show.image !== null) {
             showImage = data[i].show.image.medium ;
         };
-
         //showDiv(title, season, episode, episodeName, showImage)
         let showTvInfo =`
         <div class="show__container bd-grid">
@@ -51,8 +99,10 @@ function showTvInfo(data){
                 </div>
             </a>       
         </div>`
-        document.querySelector('.container').insertAdjacentHTML("afterend", showTvInfo)
+        tvInfoString += showTvInfo
+        //document.querySelector('.container').insertAdjacentHTML("afterend", showTvInfo)
     }
+    document.querySelector('.container').innerHTML += tvInfoString
 }; 
 
-fetchTvApi();
+fetchTvApi(todayApi);

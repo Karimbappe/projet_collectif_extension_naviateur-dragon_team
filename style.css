@@ -101,3 +101,18 @@ body{
         0 0 102px rgb(255, 85, 0),
         0 0 151px rgb(255, 21, 0);
   }
+  .time__arrow{
+    display: grid;
+    grid-template-columns: 20px 250px 20px;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+.bx{
+    margin-top: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.container{
+    display: grid;
+    gap: .5rem;
+}

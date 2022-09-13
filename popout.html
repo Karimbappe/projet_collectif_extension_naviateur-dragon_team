@@ -7,19 +7,22 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">  
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
     <title>TV - Calendar</title>
 </head>
 <body>
     <header class="head neonText">
         <h1>ON AIR TODAY</h1>
-        <h2 id="current__date" class="date"></h2>
+        <div class="time__arrow">
+        <strong><i class="bx bx-chevron-left left__arrow grid_header" onclick="fetchTvApi(yesterdayApi)"></i></strong>
+        <h2 id="current__date" class="date grid_header"></h2>
+        <i class="bx bx-chevron-right right_arrow grid_header" onclick="fetchTvApi(tomorrowApi)"></i>
+        </div>
     </header>
     <div class = "container"></div>
-     <!--<div class="show__container bd-grid">
-   <div class="show__container bd-grid">-->
     </section>
     <script src ="popout.js"> </script>
-    <script src ="time.js"> </script>
 
 </body>
 </html>
