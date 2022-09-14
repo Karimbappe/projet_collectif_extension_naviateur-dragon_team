@@ -47,8 +47,7 @@ const tomorrowApi = tomorrow.toISOString().slice(0,10);
 const yesterday= new Date()
 yesterday.setDate(yesterday.getDate() -1);
 const yesterdayApi = yesterday.toISOString().slice(0,10);
-console.log(yesterdayApi);
-console.log(tomorrowApi)
+
 
 //search API for
 const tvAPI = "https://api.tvmaze.com/schedule?country=US&date=" 
@@ -106,3 +105,44 @@ function showTvInfo(data){
 }; 
 
 fetchTvApi(todayApi);
+
+// filter code
+const searchBar = document.querySelector("#searchbar");
+
+searchBar.addEventListener("keyup", (e) => {
+    let searchedLetters = e.target.value;
+    const data = document.querySelectorAll (".show__container.bd-grid");
+    filterElements(searchedLetters, data);
+    
+});
+
+function filterElements(letters, elements) {
+    if(letters.length > 2){
+        for (let i = 0 ; i < elements.length ; i ++) {
+            if (elements[i].textContent.toLowerCase().includes(letters)) {
+                elements[i].style.display = "block";
+            } else { 
+                elements[i].style.display = "none";
+            }
+        }
+    }
+    else if (letters.length == 0){
+        for(let i = 0 ; i < elements.length ; i ++){
+        elements[i].style.display = "block"; 
+        }
+    }
+}
+function fetchTvApiYesterday(){
+    fetchTvApi(yesterdayApi);
+}
+function fetchTvApiTomorrow() {
+    fetchTvApi(tomorrowApi)
+}
+function fetchTvApiToday() {
+    fetchTvApi(todayApi)
+}
+
+document.getElementById("yesterdayApi").addEventListener("click", fetchTvApiYesterday);
+document.getElementById("tomorrowApi").addEventListener("click", fetchTvApiTomorrow);
+document.getElementById("todayApi").addEventListener("click", fetchTvApiToday);
+
