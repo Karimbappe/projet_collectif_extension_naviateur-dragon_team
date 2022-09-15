@@ -1,7 +1,7 @@
 {
-    "name": "PopApp",
-    "version": "0.0.0.1",
-    "description": "TV Calendar",
+    "name": "TV Shows",
+    "version": "1.0.1",
+    "description": "Find episode information for any show and track your favorite shows from a browser.",
     "manifest_version": 3,
     "icons": {
         "16":"img/television16.png",

@@ -142,28 +142,34 @@ input {
 .scrolltop{
     text-decoration: none;
     position: fixed;
+    width: 26px;
+    height: 26px;
+    background-color: #403A3A;;
     right: 1rem;
-    bottom: -20%;
+    bottom: -50%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: .3rem;
-    background-color: var(--containers-color-alt);
-    border-radius: .4rem;
-    z-index: var(--z-toolip);
+    border-radius: 50%;
+    z-index: 1S;
     transition: .4s;
     visibility: hidden;
+    opacity: 80%;
 }
 
 .scrolltop__icon{
-    font-size: 1.2rem;
-    color: var(--text-color);
+    font-size: 35px;
+    color: var(--containers-color);
+    height: 50px;
 }
 
 .show-scroll{
     visibility: visible;
     bottom: 5rem;
 }
+
+
 
 footer{
     display: flex;
