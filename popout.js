@@ -1,42 +1,33 @@
 // creat date for title display
 const dateElement = document.querySelector(".date");
 
-function formatDate(date) {
-    const DAYS = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-    ];
-    const MONTHS = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
-    ];
+let todayDateTitle = new Date().toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    weekday: 'long',
+    day: 'numeric'
+});
+dateElement.textContent = todayDateTitle;
 
-    return `${DAYS[date.getDay()]}, ${
-        MONTHS[date.getMonth()]
-    } ${date.getDate()} ${date.getFullYear()}`;
-}
-
-setInterval(() => {
-    const now = new Date();
-    dateElement.textContent = formatDate(now);
+let tomorrowDateTitle = new Date();
+tomorrowDateTitle.setDate(tomorrowDateTitle.getDate() + 1);
+tomorrowDateTitle = tomorrowDateTitle.toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    weekday: 'long',
+    day: 'numeric'
 });
 
-//parameter time values
+let yesterdayDateTitle = new Date();
+yesterdayDateTitle.setDate(yesterdayDateTitle.getDate() - 1);
+yesterdayDateTitle = yesterdayDateTitle.toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    weekday: 'long',
+    day: 'numeric'
+});
+
+//parameter time values for API requests
 
 const todayApi = new Date().toISOString().slice(0, 10); 
 
@@ -54,14 +45,11 @@ const tvAPI = "https://api.tvmaze.com/schedule?country=US&date="
 function fetchTvApi(day){
     fetch(tvAPI+day)
     .then(response =>response.json())
-    .then((data) =>showTvInfo(data)) //console.log(data))//
-    // .catch(() =>{
-    // infoTxt.innerText = "Oups! There is a problem."
-   // })
+    .then((data) =>showTvInfo(data))
 };
 
 
-let defaultImg = "img/red-matreshka128.png";
+let defaultImg = "img/television128.png";
 
 function showTvInfo(data){
     document.querySelector('.container').innerHTML=" " 
@@ -80,6 +68,7 @@ function showTvInfo(data){
         if (data[i].show.image !== null) {
             showImage = data[i].show.image.medium ;
         };
+        
         //showDiv(title, season, episode, episodeName, showImage)
         let showTvInfo =`
         <div class="show__container bd-grid">
@@ -99,14 +88,13 @@ function showTvInfo(data){
             </a>       
         </div>`
         tvInfoString += showTvInfo
-        //document.querySelector('.container').insertAdjacentHTML("afterend", showTvInfo)
     }
     document.querySelector('.container').innerHTML += tvInfoString
 }; 
-
 fetchTvApi(todayApi);
 
-// filter code
+
+// Filter search bar 
 const searchBar = document.querySelector("#searchbar");
 
 searchBar.addEventListener("keyup", (e) => {
@@ -132,17 +120,31 @@ function filterElements(letters, elements) {
         }
     }
 }
+
+//Fetch API click on arrow for each day + date under title accordingly
 function fetchTvApiYesterday(){
     fetchTvApi(yesterdayApi);
+    dateElement.textContent = yesterdayDateTitle;
 }
 function fetchTvApiTomorrow() {
     fetchTvApi(tomorrowApi)
+    dateElement.textContent = tomorrowDateTitle;
 }
 function fetchTvApiToday() {
     fetchTvApi(todayApi)
+    dateElement.textContent = todayDateTitle;
 }
 
 document.getElementById("yesterdayApi").addEventListener("click", fetchTvApiYesterday);
 document.getElementById("tomorrowApi").addEventListener("click", fetchTvApiTomorrow);
 document.getElementById("todayApi").addEventListener("click", fetchTvApiToday);
 
+
+// Scroll to TOP
+function scrollTop(){
+    const scrollTop = document.getElementById('scroll-top');
+    // When the scroll is higher than 200 viewport height, add the show-scroll class to the a tag with the scroll-top class.
+    if(this.scrollY >= 400) scrollTop.classList.add('show-scroll'); 
+    else scrollTop.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollTop)

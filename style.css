@@ -9,22 +9,12 @@
 --containers-color: #FAFAFA;
 --conterners-color-alt: #F0EFEF;
 --body-color: #FCFCFC;
- /*====== Font and Typography ======*/
---body-font:'Poppins', sans-serif;
---h1-font-size: 1.5rem;
---h2-font-size: 1.25rem;
---h3-font-size: 1rem;
---normal-font-size: .938rem;
---small-font-size: .875rem;
---smaller-font-size: .813rem;
- /*====== Font weight ======*/
---font-medium: 500;
---font-semi-bold: 900;
-/*====== Margins ======*/
+ /*===== Margins =====*/
 --mb-1:.5rem;
 --mb-2:1rem;
 --mb-3:1.5rem;
 }
+
 body{
     width: 300px;
     display: grid;
@@ -32,16 +22,20 @@ body{
     font-family: 'Roboto', sans-serif;
     background-color: #403A3A;
 }
+
 .head{
     text-align: center;
     color: white;
 }
+
 .date{
     margin-bottom: -3px;
 }
+
 .title{
     cursor: pointer;
 }
+
 input {
     position:relative;
     width: 260px;
@@ -55,6 +49,7 @@ input {
     background-color: #FAFAFA;
     margin-top: 20px;
 }
+
 .bd-grid{
     display: grid;
     gap: 1rem;
@@ -63,44 +58,53 @@ input {
     border-radius: 10px;
     background-color: rgb(250, 248, 245);
 }
+
 .show__text__info{
     font-size: 12px;
     display: grid;
     margin-right: 4px;
     line-height: 19px
 }
+
 .show_text_style{
     font-weight: bold;
 }
+
 .bd-container{
     max-width: 968px;
     width: calc(100% - 3rem);
     margin-left: var(--mb-3);
     margin-right: var(--mb-3);
 }
+
 .show__content{
     border: #403A3A 1px solid;
     border-radius: 10px;
     text-decoration: none;
     color: var(--text-color);
 }
+
 .show__container{
     font-size: 14px;
 }
+
 .show__img{
     width: 137px;
     border-radius: 9px;  
 }
+
 .show__information{
     margin-left: 15px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+
 .show__title{
     text-align: center;
     margin-bottom: -3px; 
     font-weight: 700;
 }
+
 .neonText {
     color: #fff;
     text-shadow:
@@ -114,19 +118,54 @@ input {
         0 0 92px rgb(255, 30, 0),
         0 0 102px rgb(255, 85, 0),
         0 0 151px rgb(255, 21, 0);
-  }
-  .time__arrow{
+}
+
+.time__arrow{
     display: grid;
     grid-template-columns: 20px 250px 20px;
     margin-bottom: 15px;
     justify-content: center;
 }
+
 .bx{
     margin-top: 20px;
     font-weight: 700;
     cursor: pointer;
 }
+
 .container{
     display: grid;
     gap: .5rem;
+}
+
+/*   SCROLL TOP   */
+.scrolltop{
+    text-decoration: none;
+    position: fixed;
+    right: 1rem;
+    bottom: -20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .3rem;
+    background-color: var(--containers-color-alt);
+    border-radius: .4rem;
+    z-index: var(--z-toolip);
+    transition: .4s;
+    visibility: hidden;
+}
+
+.scrolltop__icon{
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.show-scroll{
+    visibility: visible;
+    bottom: 5rem;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
 }

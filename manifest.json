@@ -4,15 +4,15 @@
     "description": "TV Calendar",
     "manifest_version": 3,
     "icons": {
-        "16":"img/red-matreshka16.png",
-        "48": "img/red-matreshka48.png",
-        "128": "img/red-matreshka128.png"
+        "16":"img/television16.png",
+        "48": "img/television64.png",
+        "128": "img/television128.png"
       },
     "action": {
         "default_popup": "/popout.html",
         "default_icon": {
-        "48": "img/red-matreshka48.png",
-        "128": "img/red-matreshka128.png"
+        "48": "img/television64.png",
+        "128": "img/television128.png"
         }
       }
 }
