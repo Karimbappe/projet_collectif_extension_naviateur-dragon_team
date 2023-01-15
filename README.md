@@ -2,7 +2,7 @@ On air Today 📺
 
 On air Today 📺 est une extension pour navigateur Chrome développée en utilisant HTML, CSS et JavaScript. Elle utilise une API pour afficher toutes les sorties TV US du jour, ainsi vous ne raterez plus jamais vos émissions préférées.
 
-stack : HTMl, CSS, Javascript
+stack : HTML, CSS, Javascript
 
 Fonctionnalités
 
