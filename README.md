@@ -5,9 +5,9 @@ On air Today 📺 est une extension pour navigateur Chrome développée en utili
 Fonctionnalités
 
 - Affiche la liste des émissions de télévision programmées pour la journée en cours
-- Affiche les détails de chaque émission, y compris l'heure de début, la chaîne de télévision et le synopsis
-- Possibilité de trier les émissions par heure ou par chaîne
-- Possibilité de marquer les émissions comme regardées ou de les ajouter à une liste de favoris
+- Affiche les détails de chaque émission, y compris la saison, le nom de l'épisode, la chaîne de télévision.
+- Possibilité de trier les émissions par chaîne ou nom
+- Lien vers les sites de diffuseurs pour regarder en live ou en replay
 - Interface moderne et simple pour une utilisation facile
 
 
